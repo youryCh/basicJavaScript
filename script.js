@@ -1,3 +1,5 @@
+"use strict";
+
 // задание 1
 
 let tC = +prompt("Введите температуру в градусах по Цельсию");
@@ -6,10 +8,8 @@ alert(tC + " градусов по Цельсию = " + tF + " градусов 
 
 // задание 2
 
-let admin = null;
-let name = null;
-name = "Василий";
-admin = name;
+let admin = name;
+let name = "Василий";
 console.log(admin);
 
 // задание 3
