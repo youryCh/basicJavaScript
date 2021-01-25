@@ -96,7 +96,7 @@ const products = [
 
 // 1
 let productWithPhoto = products.filter(function(product) {
-    return product.photos != undefined;
+    return product.photos != undefined && product.photos[0] != undefined;
 });
 console.log(productWithPhoto);
 
@@ -114,7 +114,7 @@ console.log(sortByPrice);
 
 
 // Задание 5 
-for (let i = 0; i < 10; i++, console.log(i - 1)) {};
+for (let i = 0; i < 10; console.log(i), i++) {}
 
 
 // Задание 6
