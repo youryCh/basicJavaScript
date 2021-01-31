@@ -45,25 +45,25 @@ console.log(post.comments[1].text);
 
 
 // Задание 3
-const products = [
-    {
-        id: 3,
-        price: 200,
-    },
-    {
-        id: 4,
-        price: 900,
-    },
-    {
-        id: 1,
-        price: 1000,
-    },
-];
-let discount = 15;
-products.forEach(function(product) {
-    product.price = product.price - (product.price / 100 * discount);
-});
-console.log(products);
+// const products = [
+//     {
+//         id: 3,
+//         price: 200,
+//     },
+//     {
+//         id: 4,
+//         price: 900,
+//     },
+//     {
+//         id: 1,
+//         price: 1000,
+//     },
+// ];
+// let discount = 15;
+// products.forEach(function(product) {
+//     product.price = product.price - (product.price / 100 * discount);
+// });
+// console.log(products);
 
 
 // Задание 4
@@ -96,7 +96,7 @@ const products = [
 
 // 1
 let productWithPhoto = products.filter(function(product) {
-    return product.photos != undefined && product.photos[0] != undefined;
+    return "product.photos" in products && "product.photos[0]" in products;
 });
 console.log(productWithPhoto);
 
@@ -106,9 +106,8 @@ let sortByPrice = products.sort(function(a, b) {
         return -1;
     } else if (a.price > b.price) {
         return 1;
-    }else {
-        return 0;
     }
+    return 0;    
 });
 console.log(sortByPrice);
 
