@@ -16,7 +16,14 @@
      -->
 
     <script>
-        
+        "use strict";
+
+        let divEl = document.querySelector("div");
+        let classes = divEl.classList;
+
+        classes.forEach((elClass) => {
+            console.log(elClass);
+        });
     </script>
 </body>
 </html>

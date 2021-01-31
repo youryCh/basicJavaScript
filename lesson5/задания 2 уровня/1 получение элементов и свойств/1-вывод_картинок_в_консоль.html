@@ -15,6 +15,16 @@
     2. Пробегитесь по этой коллекции с помощью цикла или forEach
     и выведите каждую картинку в консоль. Выведите в консоль только
 	элементы коллекции, не нужно пытаться сделать, чтобы в консоли
-	появилось изображение. -->
+    появилось изображение. -->
+    
+    <script>
+        "use strict";
+
+        let images = document.querySelectorAll("img");
+
+        images.forEach(function(image) {
+            console.log(image);
+        });
+    </script>
 </body>
 </html>
