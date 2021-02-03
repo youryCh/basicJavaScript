@@ -20,7 +20,13 @@
     -->
 
     <script>
-        
+        'use strict';
+
+        let allInput = document.querySelectorAll('input');
+
+        allInput.forEach(function(input) {
+            input.insertAdjacentHTML('afterend', '<br>');
+        });
     </script>
 </body>
 </html>
