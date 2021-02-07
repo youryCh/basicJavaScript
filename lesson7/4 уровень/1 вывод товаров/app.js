@@ -85,7 +85,8 @@ function clickHandler(event) {
     
     //в showCategory надо передать строку с типом категории, тип берите
     //из атрибута data-type у кнопки, по которой кликнули.
-    
+    productsEl.innerHTML = '';
+    showCategory(event.target.dataset.type);
 }
 
 /**
@@ -96,7 +97,7 @@ function clickHandler(event) {
  * по которой кликнули.
  */
 function showCategory(category) {
-    
+    products[category].forEach(getProductMarkup);
 }
 
 /**
@@ -109,5 +110,20 @@ function showCategory(category) {
  * в верху этого файла.
  */
 function getProductMarkup(product) {
-
+    let productMarkup = `
+        <div class="product">
+            <div>${product.name}</div>
+            <img src="${product.imageUrl}" alt="">
+            <div>${product.price}</div>
+            <a href="https://example.com/producs/${product.id}">Подробнее</a>
+        </div>     
+    `;
+    productsEl.innerHTML += productMarkup;
 }
+
+const buttonEl = document.querySelectorAll('button');
+const productsEl = document.querySelector('.products');
+
+buttonEl.forEach((button) => {
+    button.addEventListener('click', clickHandler);
+});

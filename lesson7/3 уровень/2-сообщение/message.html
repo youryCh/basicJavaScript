@@ -26,7 +26,17 @@
     -->
 
     <script>
-        
+        'use strict';
+
+        const buttonEl = document.querySelector('button');
+        const messageEl = document.querySelector('.message');
+        let audioEl = new Audio('notification.mp3');
+
+        buttonEl.addEventListener('click', () => {
+            let heightMessage = messageEl.clientHeight;
+            messageEl.style.top = `calc(100vh - ${heightMessage}px)`;
+            audioEl.play();
+        });
     </script>
 </body>
 
